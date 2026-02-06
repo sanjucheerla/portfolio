@@ -27,7 +27,7 @@ const projects = [
     name: 'CLOVER - Biomedical Knowledge Extraction',
     description: 'System for extracting validated entity relationships from biomedical literature using chained LLMs and Knowledge Graphs.',
     tech: ['LLMs', 'Knowledge Graphs', 'Prompt Engineering', 'Python'],
-    result: 'Published in Journal of Bioinformatics',
+    result: 'Publicaton TBD',
     icon: Brain,
     github: 'https://github.com/sanjanacheerla',
     featured: true,

@@ -27,12 +27,7 @@ const contactInfo = [
     href: 'https://github.com/sanjanacheerla',
     external: true,
   },
-  {
-    icon: Phone,
-    label: 'Phone',
-    value: '+1-978-505-5888',
-    href: 'tel:+19785055888',
-  },
+  // Phone contact removed
   {
     icon: MapPin,
     label: 'Location',

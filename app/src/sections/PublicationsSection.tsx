@@ -11,6 +11,7 @@ const publications = [
     date: 'March 2025',
     position: 'Co-First Author',
     description: 'Investigating the decision-making capabilities of Large Language Models in risk assessment scenarios.',
+    url: 'https://coin-workshop.github.io/coine-2025-detroit/papers/paper_13.pdf',
   },
   {
     title: 'Weapons of Online Harassment: Menacing and Profiling Users via Social Apps',
@@ -18,6 +19,7 @@ const publications = [
     date: 'August 2025',
     position: 'First Author',
     description: 'Comprehensive analysis of misconduct patterns on social networking platforms using ML techniques.',
+    url: 'https://ieeexplore.ieee.org/abstract/document/11285926',
   },
   {
     title: 'CLOVER: Chained LLMs for Obtaining Validated Entity Relationships in Biomedical Literature',
@@ -25,6 +27,7 @@ const publications = [
     date: 'TBD',
     position: 'First Author',
     description: 'Novel approach to extracting and validating entity relationships from biomedical papers using chained LLMs and Knowledge Graphs.',
+    url: '#',
   },
 ];
 
@@ -98,10 +101,22 @@ export function PublicationsSection() {
 
                     {/* Link */}
                     <div className="mt-4 pt-4 border-t border-border">
-                      <span className="inline-flex items-center gap-2 text-sm text-navy-muted group-hover:text-coral transition-colors font-medium">
-                        <span>View Publication</span>
-                        <ExternalLink className="w-4 h-4" />
-                      </span>
+                      {pub.url ? (
+                        <a
+                          href={pub.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-2 text-sm text-navy-muted group-hover:text-coral transition-colors font-medium"
+                        >
+                          <span>View Publication</span>
+                          <ExternalLink className="w-4 h-4" />
+                        </a>
+                      ) : (
+                        <span className="inline-flex items-center gap-2 text-sm text-navy-muted group-hover:text-coral transition-colors font-medium">
+                          <span>View Publication</span>
+                          <ExternalLink className="w-4 h-4" />
+                        </span>
+                      )}
                     </div>
                   </CardContent>
                 </Card>

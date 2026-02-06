@@ -52,12 +52,7 @@ export function Footer() {
             >
               <Mail className="w-5 h-5" />
             </a>
-            <a
-              href="tel:+19785055888"
-              className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center text-white hover:text-coral hover:bg-white/20 transition-all duration-300"
-            >
-              <Phone className="w-5 h-5" />
-            </a>
+            {/* Phone contact removed */}
           </div>
         </div>
 
