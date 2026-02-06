@@ -16,13 +16,13 @@ export function SkillCategory({ title, skills, icon: Icon, delay = 0 }: SkillCat
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-100px' }}
       transition={{ duration: 0.6, delay, ease: [0.34, 1.56, 0.64, 1] }}
-      className="bg-white rounded-2xl p-6 shadow-soft hover:shadow-soft-lg transition-all duration-400 border border-gray-100"
+      className="bg-white dark:bg-navy-800 rounded-2xl p-6 shadow-soft hover:shadow-soft-lg transition-all duration-400 border border-gray-100 dark:border-navy-700"
     >
       <div className="flex items-center gap-3 mb-4">
-        <div className="w-12 h-12 rounded-xl bg-coral-50 flex items-center justify-center">
+        <div className="w-12 h-12 rounded-xl bg-coral-50 dark:bg-coral-900 flex items-center justify-center">
           <Icon className="w-6 h-6 text-coral" />
         </div>
-        <h3 className="text-navy font-bold text-lg">{title}</h3>
+        <h3 className="text-navy dark:text-white font-bold text-lg">{title}</h3>
       </div>
       <div className="flex flex-wrap gap-2">
         {skills.map((skill, index) => (
@@ -35,7 +35,7 @@ export function SkillCategory({ title, skills, icon: Icon, delay = 0 }: SkillCat
           >
             <Badge
               variant="secondary"
-              className="bg-coral-50 text-coral hover:bg-coral hover:text-white transition-all duration-300 cursor-default px-3 py-1.5 text-sm font-medium"
+              className="bg-coral-50 text-coral hover:bg-coral hover:text-white dark:bg-coral-900 dark:text-coral-100 dark:hover:bg-coral-700 dark:hover:text-white transition-all duration-300 cursor-default px-3 py-1.5 text-sm font-medium"
             >
               {skill}
             </Badge>
