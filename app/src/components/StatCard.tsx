@@ -7,7 +7,7 @@ interface StatCardProps {
   delay?: number;
 }
 
-function useCountUp(end: number, duration: number = 2000, startCounting: boolean = false) {
+function useCountUp(end: number, duration: number = 1000, startCounting: boolean = false) {
   const [count, setCount] = useState(0);
 
   useEffect(() => {
