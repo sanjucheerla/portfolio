@@ -60,116 +60,55 @@ export function ContactSection() {
           </AnimatedSection>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-12">
-          {/* Contact Info Cards */}
-          <div className="lg:col-span-2 space-y-4">
-            {contactInfo.map((item, index) => (
-              <motion.div
-                key={item.label}
-                initial={{ opacity: 0, x: -30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true, margin: '-100px' }}
-                transition={{
-                  duration: 0.6,
-                  delay: index * 0.1,
-                  ease: [0.34, 1.56, 0.64, 1],
-                }}
-              >
-                {item.href ? (
-                  <a
-                    href={item.href}
-                    target={item.external ? '_blank' : undefined}
-                    rel={item.external ? 'noopener noreferrer' : undefined}
-                  >
-                    <Card className="bg-card border border-border hover:border-coral/30 transition-all duration-400 group shadow-soft hover:shadow-soft-lg">
-                      <CardContent className="p-4 flex items-center gap-4">
-                        <div className="w-12 h-12 rounded-xl bg-coral-50 flex items-center justify-center flex-shrink-0">
-                          <item.icon className="w-5 h-5 text-coral" />
-                        </div>
-                        <div className="flex-grow">
-                          <p className="text-navy-muted text-sm font-medium">{item.label}</p>
-                          <p className="text-navy font-semibold group-hover:text-coral transition-colors">
-                            {item.value}
-                          </p>
-                        </div>
-                        <ArrowUpRight className="w-5 h-5 text-navy-subtle group-hover:text-coral transition-colors" />
-                      </CardContent>
-                    </Card>
-                  </a>
-                ) : (
-                  <Card className="bg-card border border-border shadow-soft">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {contactInfo.slice(0, 4).map((item, index) => (
+            <motion.div
+              key={item.label}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-100px' }}
+              transition={{
+                duration: 0.6,
+                delay: index * 0.1,
+                ease: [0.34, 1.56, 0.64, 1],
+              }}
+            >
+              {item.href ? (
+                <a
+                  href={item.href}
+                  target={item.external ? '_blank' : undefined}
+                  rel={item.external ? 'noopener noreferrer' : undefined}
+                >
+                  <Card className="bg-card border border-border hover:border-coral/30 transition-all duration-400 group shadow-soft hover:shadow-soft-lg">
                     <CardContent className="p-4 flex items-center gap-4">
                       <div className="w-12 h-12 rounded-xl bg-coral-50 flex items-center justify-center flex-shrink-0">
                         <item.icon className="w-5 h-5 text-coral" />
                       </div>
-                      <div>
+                      <div className="flex-grow">
                         <p className="text-navy-muted text-sm font-medium">{item.label}</p>
-                        <p className="text-navy font-semibold">{item.value}</p>
+                        <p className="text-navy font-semibold group-hover:text-coral transition-colors">
+                          {item.value}
+                        </p>
                       </div>
+                      <ArrowUpRight className="w-5 h-5 text-navy-subtle group-hover:text-coral transition-colors" />
                     </CardContent>
                   </Card>
-                )}
-              </motion.div>
-            ))}
-          </div>
-
-          {/* Contact Form */}
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: '-100px' }}
-            transition={{ duration: 0.6, delay: 0.2, ease: [0.34, 1.56, 0.64, 1] }}
-            className="lg:col-span-3"
-          >
-            <Card className="bg-card border border-border shadow-soft-lg">
-              <CardContent className="p-6 md:p-8">
-                <h3 className="text-navy font-bold text-xl mb-6">Send a Message</h3>
-                <form className="space-y-5" onSubmit={(e) => e.preventDefault()}>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-                    <div>
-                      <label className="text-navy-muted text-sm font-medium mb-2 block">Name</label>
-                      <Input
-                        type="text"
-                        placeholder="Your name"
-                        className="bg-cream border-border text-navy placeholder:text-navy-subtle focus:border-coral focus:ring-coral/20 rounded-xl"
-                      />
+                </a>
+              ) : (
+                <Card className="bg-card border border-border shadow-soft">
+                  <CardContent className="p-4 flex items-center gap-4">
+                    <div className="w-12 h-12 rounded-xl bg-coral-50 flex items-center justify-center flex-shrink-0">
+                      <item.icon className="w-5 h-5 text-coral" />
                     </div>
                     <div>
-                      <label className="text-navy-muted text-sm font-medium mb-2 block">Email</label>
-                      <Input
-                        type="email"
-                        placeholder="your@email.com"
-                        className="bg-cream border-border text-navy placeholder:text-navy-subtle focus:border-coral focus:ring-coral/20 rounded-xl"
-                      />
+                      <p className="text-navy-muted text-sm font-medium">{item.label}</p>
+                      <p className="text-navy font-semibold">{item.value}</p>
                     </div>
-                  </div>
-                  <div>
-                    <label className="text-navy-muted text-sm font-medium mb-2 block">Subject</label>
-                    <Input
-                      type="text"
-                      placeholder="What's this about?"
-                      className="bg-cream border-border text-navy placeholder:text-navy-subtle focus:border-coral focus:ring-coral/20 rounded-xl"
-                    />
-                  </div>
-                  <div>
-                    <label className="text-navy-muted text-sm font-medium mb-2 block">Message</label>
-                    <Textarea
-                      placeholder="Tell me about your project or opportunity..."
-                      rows={5}
-                      className="bg-cream border-border text-navy placeholder:text-navy-subtle focus:border-coral focus:ring-coral/20 rounded-xl resize-none"
-                    />
-                  </div>
-                  <Button
-                    type="submit"
-                    className="w-full bg-coral text-white hover:bg-coral-dark rounded-xl py-6 font-semibold transition-all duration-300 hover:-translate-y-0.5 hover:shadow-coral flex items-center justify-center gap-2"
-                  >
-                    <span>Send Message</span>
-                    <Send className="w-4 h-4" />
-                  </Button>
-                </form>
-              </CardContent>
-            </Card>
-          </motion.div>
+                  </CardContent>
+                </Card>
+              )}
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>
