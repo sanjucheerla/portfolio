@@ -1,10 +1,7 @@
 import { motion } from 'framer-motion';
 import { AnimatedSection } from '@/components/AnimatedSection';
-import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
-import { Mail, MapPin, Linkedin, Github, Send, ArrowUpRight } from 'lucide-react';
+import { Mail, MapPin, Linkedin, Github, ArrowUpRight } from 'lucide-react';
 
 const contactInfo = [
   {
