@@ -55,7 +55,7 @@ export function AboutSection() {
                     key={stat.label}
                     value={stat.value}
                     label={stat.label}
-                    delay={0}
+                    delay={0.5 + index * 0.1}
                   />
                 ))}
               </div>
