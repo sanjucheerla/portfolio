@@ -3,9 +3,9 @@ import { AnimatedSection } from '@/components/AnimatedSection';
 import { StatCard } from '@/components/StatCard';
 
 const stats = [
-  { value: '3.9', label: 'GPA' },
+  { value: '4', label: 'GPA' },
   { value: '3', label: 'Publications' },
-  { value: '5', label: 'Years Experience' },
+  { value: '2', label: 'Years Experience' },
   { value: '2', label: 'Industry Internships' },
 ];
 
@@ -72,7 +72,7 @@ export function AboutSection() {
           >
             <div className="relative rounded-3xl overflow-hidden shadow-soft-lg">
               <img
-                src="/about-visual.jpg"
+                src={import.meta.env.BASE_URL + 'about-visual.jpg'}
                 alt="AI and Machine Learning Visualization"
                 className="w-full h-auto rounded-3xl"
               />
