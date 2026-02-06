@@ -5,10 +5,11 @@ interface StatCardProps {
   value: string;
   label: string;
   delay?: number;
+  start?: number;
 }
 
-function useCountUp(end: number, duration: number = 1000, startCounting: boolean = false) {
-  const [count, setCount] = useState(0);
+function useCountUp(end: number, duration: number = 1000, startCounting: boolean = false, start: number = 0) {
+  const [count, setCount] = useState(start);
 
   useEffect(() => {
     if (!startCounting) return;
@@ -22,7 +23,7 @@ function useCountUp(end: number, duration: number = 1000, startCounting: boolean
       
       // Easing function (easeOutQuart)
       const easeOutQuart = 1 - Math.pow(1 - progress, 4);
-      setCount(Math.floor(easeOutQuart * end));
+      setCount(Math.floor(start + easeOutQuart * (end - start)));
 
       if (progress < 1) {
         animationFrame = requestAnimationFrame(animate);
@@ -37,7 +38,7 @@ function useCountUp(end: number, duration: number = 1000, startCounting: boolean
   return count;
 }
 
-export function StatCard({ value, label, delay = 0 }: StatCardProps) {
+export function StatCard({ value, label, delay = 0, start = 0 }: StatCardProps) {
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
   
@@ -46,7 +47,7 @@ export function StatCard({ value, label, delay = 0 }: StatCardProps) {
   const numericValue = numericMatch ? parseFloat(numericMatch[1]) : 0;
   const suffix = numericMatch ? numericMatch[2] : value;
   
-  const count = useCountUp(numericValue, 2000, isInView);
+  const count = useCountUp(numericValue, 1000, isInView, start);
 
   return (
     <motion.div
