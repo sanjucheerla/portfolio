@@ -35,7 +35,7 @@ export function SkillCategory({ title, skills, icon: Icon, delay = 0 }: SkillCat
           >
             <Badge
               variant="secondary"
-              className="bg-coral-50 text-coral hover:bg-coral hover:text-white transition-all duration-300 cursor-default px-3 py-1.5 text-sm font-medium"
+              className="bg-coral-50 text-black hover:bg-coral hover:text-white transition-all duration-300 cursor-default px-3 py-1.5 text-sm font-medium"
             >
               {skill}
             </Badge>
