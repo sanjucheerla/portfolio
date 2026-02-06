@@ -16,7 +16,7 @@ export function SkillCategory({ title, skills, icon: Icon, delay = 0 }: SkillCat
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-100px' }}
       transition={{ duration: 0.6, delay, ease: [0.34, 1.56, 0.64, 1] }}
-      className="bg-white rounded-2xl p-6 shadow-soft hover:shadow-soft-lg transition-all duration-400 border border-gray-100"
+      className="bg-card border border-border rounded-2xl p-6 shadow-soft hover:shadow-soft-lg transition-all duration-400"
     >
       <div className="flex items-center gap-3 mb-4">
         <div className="w-12 h-12 rounded-xl bg-coral-50 flex items-center justify-center">
