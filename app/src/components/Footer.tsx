@@ -14,8 +14,8 @@ export function Footer() {
           {/* Logo/Name */}
           <div className="text-center md:text-left">
             <a
-              href="#"
-              onClick={(e) => {
+              href="#top"
+              onClick={e => {
                 e.preventDefault();
                 window.scrollTo({ top: 0, behavior: 'smooth' });
               }}

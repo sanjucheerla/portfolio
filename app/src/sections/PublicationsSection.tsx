@@ -21,8 +21,8 @@ const publications = [
   },
   {
     title: 'CLOVER: Chained LLMs for Obtaining Validated Entity Relationships in Biomedical Literature',
-    venue: 'Journal of Bioinformatics',
-    date: 'December 2025',
+    venue: 'TBD',
+    date: 'TBD',
     position: 'First Author',
     description: 'Novel approach to extracting and validating entity relationships from biomedical papers using chained LLMs and Knowledge Graphs.',
   },

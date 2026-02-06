@@ -63,13 +63,17 @@ export function Navigation() {
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center gap-1">
               {navLinks.map((link) => (
-                <button
+                <a
                   key={link.name}
-                  onClick={() => scrollToSection(link.href)}
+                  href={link.href}
+                  onClick={e => {
+                    e.preventDefault();
+                    scrollToSection(link.href);
+                  }}
                   className="px-4 py-2 text-sm text-navy-light hover:text-coral transition-colors duration-300 font-medium"
                 >
                   {link.name}
-                </button>
+                </a>
               ))}
             </div>
 
@@ -110,16 +114,20 @@ export function Navigation() {
           >
             <div className="flex flex-col items-center justify-center h-full gap-6">
               {navLinks.map((link, index) => (
-                <motion.button
+                <motion.a
                   key={link.name}
+                  href={link.href}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.1 }}
-                  onClick={() => scrollToSection(link.href)}
+                  onClick={e => {
+                    e.preventDefault();
+                    scrollToSection(link.href);
+                  }}
                   className="text-2xl font-semibold text-navy hover:text-coral transition-colors"
                 >
                   {link.name}
-                </motion.button>
+                </motion.a>
               ))}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
