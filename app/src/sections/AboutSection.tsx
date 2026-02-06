@@ -55,8 +55,7 @@ export function AboutSection() {
                     key={stat.label}
                     value={stat.value}
                     label={stat.label}
-                    delay={0.2}
-                    start={stat.label === 'GPA' ? 1 : 0}
+                    delay={0}
                   />
                 ))}
               </div>
